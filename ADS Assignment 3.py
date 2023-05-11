@@ -131,7 +131,7 @@ us_data = data1[data1["Country Name"] == "United States"]
 us_data.head(1)
 
 y = (np.array(us_data[us_data['Indicator Name']== "Population growth (annual %)"]))[0][4:44]
-
+popt, pcov = curve_fit(exponential_growth_Population_Growth, x, y)
 from scipy.optimize import curve_fit
 import warnings
 warnings.filterwarnings('ignore')
